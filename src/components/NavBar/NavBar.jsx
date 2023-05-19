@@ -11,7 +11,7 @@ const NavBar = () => {
     </>
 
     return (
-        <div className="h-28 mb-4">
+        <div className="h-16 mb-4">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
