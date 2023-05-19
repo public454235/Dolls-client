@@ -1,5 +1,5 @@
-import dolls5 from "../../assets/dolls9.jpg"
-import dolls6 from "../../assets/dolls8.jpg"
+import dolls5 from "../../assets/gallery/doll32.jpg"
+import dolls6 from "../../assets/gallery/doll36.jpg"
 
 const About = () => {
     return (
@@ -12,7 +12,7 @@ const About = () => {
                     </div>
                     <div className="w-1/2 space-y-4">
                         <h3 className="text-3xl text-orange-500 font-bold">About us</h3>
-                        <h1 className="text-5xl font-bold">Welcome to Kidko Kindergarten</h1>
+                        <h1 className="text-5xl text-blue-950 font-bold">Welcome to Kidko Kindergarten</h1>
                         <p className="py-6">Cupidatat non proident sunt culpa qui officia deserunt mollit anim idest laborum
                             Cupidatat non proident sunt culpa qui officia deserunt mollit anim idest laborum sed ut perspiciatis unde omnis iste natuserror sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.</p>
                         <button className="btn btn-primary">CONTACT US</button>

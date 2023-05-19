@@ -11,7 +11,7 @@ const Banner = () => {
                     <div className=" absolute h-full items-center flex left-0 top-0 ">
                         <div className="lg:flex justify-between h-y-7 w-full lg:pl-64 pl-64">
                             <div className="text-black space-y-7 w-1/2">
-                                <h2 className="text-6xl font-bold "><span className="text-purple-600">L.O.L. Surprise!</span><br /> Tweens Babysitting Beach</h2>
+                                <h2 className="text-6xl font-bold "><span className="text-blue-950">L.O.L. Surprise!</span><br /> Tweens Babysitting Beach</h2>
                                 <p>Party with 20 Surprises Including Color Change Features <br />and 2 Dolls Great Gift for Kids Ages 4+, Multicolor</p>
                             </div>
                             <div className="w-1/2">

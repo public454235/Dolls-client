@@ -1,5 +1,6 @@
 import About from "../About/About";
 import Banner from "../Banner/Banner";
+import Events from "../Events/Events";
 import Gallery from "../Gallery/Gallery";
 
 
@@ -9,6 +10,7 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <About></About>
+            <Events></Events>
         </div>
     );
 };
