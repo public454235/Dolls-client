@@ -5,8 +5,10 @@ const NavBar = () => {
     const navItem = <>
 
         <li><Link to='/'>Home</Link></li>
+        <li><Link to='/allToys'>All Toys</Link></li>
+        <li><Link to='/myToys'>My Toys</Link></li>
+        <li><Link to='/addAToy'>Add A Toy</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
-        <li><Link to='/blogs'>Profile</Link></li>
 
     </>
 
@@ -24,13 +26,14 @@ const NavBar = () => {
                     </div>
                     <a className="btn btn-ghost normal-case text-xl"><img className="w-20" src={logo} alt="" /></a>
                 </div>
-                <div className="text-purple-400 font-semibold navbar-center hidden lg:flex">
+                <div className="text-emerald-400 font-semibold navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {navItem}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <input type="text" placeholder="Search" className="input input-bordered" />
+                <div className="text-emerald-400 navbar-end space-x-3 font-bold text-2xl">
+                <Link to='/login'>Profile</Link>
+                <Link to='/login'>Login</Link>
                 </div>
             </div>
         </div>
