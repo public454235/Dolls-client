@@ -1,30 +1,47 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.config";
 
-
+const auth = getAuth(app)
 const Login = () => {
-    const {signIn}= useContext(AuthContext)
-    const location= useLocation()
+    const { signIn } = useContext(AuthContext)
+    const location = useLocation()
     const navigate = useNavigate()
 
     const from = location.state?.from?.pathname || '/'
 
+    const provider = new GoogleAuthProvider()
 
-    const handleLogin = event =>{
+
+    const handleLogin = event => {
         event.preventDefault()
         const form = event.target;
-        const email=form.email.value;
-        const password=form.password.value;
+        const email = form.email.value;
+        const password = form.password.value;
         console.log(email, password)
+
+
         signIn(email, password)
-        .then(result=>{
-            const user= result.user
-            console.log(user)
-            navigate(from, {replace: true})
-        })
-        .catch(error=>{console.log(error)
-        })
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+    const handleGoogleLogin = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                navigate(from)
+            })
+            .catch(error => { console.log(error) })
     }
     return (
         <div>
@@ -57,7 +74,14 @@ const Login = () => {
                                     <input className="btn btn-primary" type="submit" value="Login" />
                                 </div>
                                 <p>New to dolls account <Link className="text-orange-600" to='/signUp'>Sign Up</Link></p>
+
+                                <div className="divider">OR</div>
+                                <div className="text-center">
+                                    <input onClick={handleGoogleLogin} className="btn btn-error" type="submit" value="google" />
+
+                                </div>
                             </form>
+
 
                         </div>
                     </div>

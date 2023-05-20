@@ -2,15 +2,28 @@ import { useContext } from "react";
 import { Link } from "react-router-dom"
 import logo from '../../assets/Logo.svg'
 import { AuthContext } from "../Providers/AuthProviders";
+import { FaUserCircle } from "react-icons/fa";
 
 const NavBar = () => {
-    const { user } = useContext(AuthContext)
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
     const navItem = <>
 
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allToys'>All Toys</Link></li>
         <li><Link to='/myToys'>My Toys</Link></li>
-        <li><Link to='/addAToy'>Add A Toy</Link></li>
+
         <li><Link to='/blogs'>Blogs</Link></li>
 
     </>
@@ -35,13 +48,22 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="text-blue-950 navbar-end space-x-3 font-bold text-2xl">
-                    <Link to='/login'><div className="avatar">
+                    <div className="avatar">
                         <div className="w-10 h-10 rounded-full">
-                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            {user ?
+                                <img title={user?.displayName} src={user?.photoURL} />
+                                : <FaUserCircle className="mt-2"></FaUserCircle>
+                            }
                         </div>
-                    </div></Link>
-                    <button className="btn btn-primary"><Link to='/login'>Sign Up</Link></button>
-                    <button className="btn btn-primary"><Link to='/login'>Login</Link></button>
+                    </div>
+                    {user?.email ?
+                        <>
+                            <li><Link to='/addAToy'>Add Toy</Link></li>
+                            <button onClick={handleLogOut} className="btn btn-primary"><Link to='/login'>Log Out</Link></button>
+                        </>
+                        : <button className="btn btn-primary"><Link to='/login'>Login</Link></button>
+                    }
+
                 </div>
             </div>
         </div>

@@ -3,9 +3,11 @@ import error from "../../assets/gallery/error.png"
 
 const Error = () => {
     return (
-        <div className="text-center">
-            <img src={error} alt="" />
-            <Link to='/'><button>Go To Home</button></Link>
+        <div>
+            <img className="mx-auto" src={error} alt="" />
+            <div className="text-center">
+                <Link to='/'><button className="btn btn-primary">Go To Home</button></Link>
+            </div>
         </div>
     );
 };

@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
+import { Link } from "react-router-dom";
+
 
 
 const SignUp = () => {
-    const {createUser} = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
     const handleSignUp = event => {
         event.preventDefault()
         const form = event.target;
@@ -13,15 +15,16 @@ const SignUp = () => {
         const password = form.password.value;
         console.log(email, password, name, photo)
         createUser(email, password)
-        .then(result=>{
-            const user =result.user;
-            console.log('created user', user)
-        })
-        .catch(error=> {
-            console.log(error)
-        })
+            .then(result => {
+                const user = result.user;
+                console.log('created user', user)
+            })
+            .catch(error => {
+                console.log(error)
+            })
 
     }
+    
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -64,6 +67,9 @@ const SignUp = () => {
                                 <div className="form-control mt-6">
                                     <input className="btn btn-primary" type="submit" value="Sign Up" />
                                 </div>
+                                <p>Already have an account <Link className="text-orange-600" to='/login'>Login</Link></p>
+                                
+
                             </form>
 
                         </div>
