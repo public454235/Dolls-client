@@ -12,6 +12,8 @@ import Blogs from './components/Blogs/Blogs';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import AuthProviders from './components/Providers/AuthProviders';
+import Category from './components/Category/Category';
+import BabyDetails from './components/BabyDolls/BabyDetails';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
       {
         path: 'signUp',
         element: <SignUp></SignUp>
+      },
+      {
+        path: 'category',
+        element: <Category></Category>
+      },
+      {
+        path: 'babyDetails/:id',
+        element: <BabyDetails></BabyDetails>
       }
     ]
   },
