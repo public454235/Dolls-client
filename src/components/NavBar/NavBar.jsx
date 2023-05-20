@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom"
 import logo from '../../assets/Logo.svg'
+import { AuthContext } from "../Providers/AuthProviders";
 
 const NavBar = () => {
+    const { user } = useContext(AuthContext)
     const navItem = <>
 
         <li><Link to='/'>Home</Link></li>
@@ -37,7 +40,8 @@ const NavBar = () => {
                             <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                         </div>
                     </div></Link>
-                    <Link to='/login'>Login</Link>
+                    <button className="btn btn-primary"><Link to='/login'>Sign Up</Link></button>
+                    <button className="btn btn-primary"><Link to='/login'>Login</Link></button>
                 </div>
             </div>
         </div>
