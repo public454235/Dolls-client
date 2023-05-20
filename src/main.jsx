@@ -11,6 +11,7 @@ import Error from './components/Error/Error';
 import Blogs from './components/Blogs/Blogs';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
+import AuthProviders from './components/Providers/AuthProviders';
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <div className='mx-auto max-w-7xl'>
     <React.StrictMode>
-      <RouterProvider router={router} />
+      <AuthProviders><RouterProvider router={router} /></AuthProviders>
     </React.StrictMode>,
   </div>
 )
