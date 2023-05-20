@@ -8,8 +8,8 @@ const Events = () => {
                 <h2 className="text-4xl font-bold text-blue-950">Our Events</h2>
             </div>
             <div className="bg-base-200 grid grid-cols-1 lg:grid-cols-2 gap-5">
-                <div className="hero min-h-6 rounded-8" style={{ backgroundImage: `url("https://i.ibb.co/SXkrxkb/doll35.jpg")` }}>
-                    <div className="hero-overlay bg-opacity-60"></div>
+                <div className="hero min-h-6 " style={{ backgroundImage: `url("https://i.ibb.co/SXkrxkb/doll35.jpg")` }}>
+                    <div className="hero-overlay bg-opacity-50"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md">
                             <h1 className="mb-5 text-4xl font-bold text-black">Numbers Matching</h1>
@@ -18,8 +18,8 @@ const Events = () => {
                         </div>
                     </div>
                 </div>
-                <div className="hero min-h-6 rounded-8" style={{ backgroundImage: `url("https://i.ibb.co/crVNyyt/doll34.jpg")` }}>
-                    <div className="hero-overlay bg-opacity-60"></div>
+                <div className="hero min-h-6 " style={{ backgroundImage: `url("https://i.ibb.co/crVNyyt/doll34.jpg")` }}>
+                    <div className="hero-overlay bg-opacity-50"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md">
                             <h1 className="mb-5 text-4xl font-bold text-black">Paper Plates Art.</h1>

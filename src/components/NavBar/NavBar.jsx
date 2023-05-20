@@ -32,8 +32,12 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="text-blue-950 navbar-end space-x-3 font-bold text-2xl">
-                <Link to='/login'>Profile</Link>
-                <Link to='/login'>Login</Link>
+                    <Link to='/login'><div className="avatar">
+                        <div className="w-10 h-10 rounded-full">
+                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        </div>
+                    </div></Link>
+                    <Link to='/login'>Login</Link>
                 </div>
             </div>
         </div>
