@@ -22,8 +22,11 @@ const NavBar = () => {
 
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allToys'>All Toys</Link></li>
-        <li><Link to='/myToys'>My Toys</Link></li>
-
+        <li><Link to='/myToy'>My Toys</Link></li>
+        {
+            user?.email ? <li><Link to='/addAToy'>Add Toy</Link></li> :
+                <li><Link to='/addAToy'>Add Toy</Link></li>
+        }
         <li><Link to='/blogs'>Blogs</Link></li>
 
     </>
@@ -58,7 +61,6 @@ const NavBar = () => {
                     </div>
                     {user?.email ?
                         <>
-                            <li><Link to='/addAToy'>Add Toy</Link></li>
                             <button onClick={handleLogOut} className="btn btn-primary"><Link to='/login'>Log Out</Link></button>
                         </>
                         : <button className="btn btn-primary"><Link to='/login'>Login</Link></button>
