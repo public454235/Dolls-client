@@ -16,6 +16,8 @@ import Category from './components/Category/Category';
 import BabyDetails from './components/BabyDolls/BabyDetails';
 import BarbieDetails from './components/BarbieDolls/BarbieDetails';
 import GirlDetails from './components/GirlDolls/GirlDetails';
+import AddToy from './components/AddToy/AddToy';
+import AllToys from './components/AllToys/AllToys';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +59,15 @@ const router = createBrowserRouter([
         path: 'girldoll/:id',
         element: <GirlDetails></GirlDetails>,
         loader: ({params})=> fetch(`http://localhost:5000/servicesGirl/${params.id}`)
+      },
+      {
+        path: 'addAToy',
+        element: <AddToy></AddToy>,
+        
+      },
+      {
+        path: 'allToys',
+        element: <AllToys></AllToys>
       }
     ]
   },
