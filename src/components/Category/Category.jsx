@@ -1,6 +1,7 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import BabyDolls from '../BabyDolls/BabyDolls';
+import BarbieDolls from '../BarbieDolls/BarbieDolls';
 
 const Category = () => {
     return (
@@ -9,7 +10,7 @@ const Category = () => {
             <Tabs>
                 <TabList>
                     <Tab>Baby Dolls</Tab>
-                    <Tab>Title 2</Tab>
+                    <Tab>barbie</Tab>
                     <Tab>Title 3</Tab>
                 </TabList>
 
@@ -17,7 +18,7 @@ const Category = () => {
                     <BabyDolls></BabyDolls>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <BarbieDolls></BarbieDolls>
                 </TabPanel>
                 <TabPanel>
                     <h2>Any content 3</h2>

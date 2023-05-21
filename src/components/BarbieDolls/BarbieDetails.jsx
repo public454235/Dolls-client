@@ -1,9 +1,9 @@
-import { useLoaderData } from "react-router-dom";
 
+import { useLoaderData } from 'react-router-dom';
 
-const BabyDetails = () => {
-    const babyDetails = useLoaderData()
-    const { Picture, category, Rating, details, price } = babyDetails
+const BarbieDetails = () => {
+    const barbieDetails = useLoaderData()
+    const { Picture, category, Rating, details, price } = barbieDetails
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -22,4 +22,4 @@ const BabyDetails = () => {
     );
 };
 
-export default BabyDetails;
+export default BarbieDetails;
