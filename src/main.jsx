@@ -18,6 +18,7 @@ import BarbieDetails from './components/BarbieDolls/BarbieDetails';
 import GirlDetails from './components/GirlDolls/GirlDetails';
 import AddToy from './components/AddToy/AddToy';
 import AllToys from './components/AllToys/AllToys';
+import Details from './components/AllToys/Details/Details';
 
 const router = createBrowserRouter([
   {
@@ -48,26 +49,32 @@ const router = createBrowserRouter([
       {
         path: 'babyDetails/:id',
         element: <BabyDetails></BabyDetails>,
-        loader: ({params})=> fetch(`http://localhost:5000/servicesdoll/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/servicesdoll/${params.id}`)
       },
       {
         path: 'barbieDolls/:id',
         element: <BarbieDetails></BarbieDetails>,
-        loader: ({params})=> fetch(`http://localhost:5000/servicesBarbie/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/servicesBarbie/${params.id}`)
       },
       {
         path: 'girldoll/:id',
         element: <GirlDetails></GirlDetails>,
-        loader: ({params})=> fetch(`http://localhost:5000/servicesGirl/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/servicesGirl/${params.id}`)
       },
       {
         path: 'addAToy',
         element: <AddToy></AddToy>,
-        
+
       },
       {
         path: 'allToys',
         element: <AllToys></AllToys>
+
+      },
+      {
+        path: '/bookings/:id',
+        element: <Details></Details>,
+        loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
       }
     ]
   },
