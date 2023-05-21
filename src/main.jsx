@@ -15,6 +15,7 @@ import AuthProviders from './components/Providers/AuthProviders';
 import Category from './components/Category/Category';
 import BabyDetails from './components/BabyDolls/BabyDetails';
 import BarbieDetails from './components/BarbieDolls/BarbieDetails';
+import GirlDetails from './components/GirlDolls/GirlDetails';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
         path: 'barbieDolls/:id',
         element: <BarbieDetails></BarbieDetails>,
         loader: ({params})=> fetch(`http://localhost:5000/servicesBarbie/${params.id}`)
+      },
+      {
+        path: 'girldoll/:id',
+        element: <GirlDetails></GirlDetails>,
+        loader: ({params})=> fetch(`http://localhost:5000/servicesGirl/${params.id}`)
       }
     ]
   },
