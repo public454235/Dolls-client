@@ -9,7 +9,7 @@ const MyToy = () => {
     useTitle('MyToy')
     const { user } = useContext(AuthContext)
     const [myBooking, setMyBooking] = useState([])
-    const url = `http://localhost:5000/bookings?email=${user?.email}`
+    const url = `https://dolls-server-assignment11.vercel.app/bookings?email=${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -20,7 +20,7 @@ const MyToy = () => {
     }, [])
     const handleDelete = id => {
         console.log(id)
-        fetch(`http://localhost:5000/bookings/${id}`, {
+        fetch(`https://dolls-server-assignment11.vercel.app/bookings/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

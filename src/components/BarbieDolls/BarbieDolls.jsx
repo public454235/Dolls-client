@@ -7,7 +7,7 @@ const BarbieDolls = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/servicesBarbie')
+        fetch('https://dolls-server-assignment11.vercel.app/servicesBarbie')
             .then(res => res.json())
             .then(data => setBarbieCard(data))
     }, [])

@@ -34,7 +34,7 @@ const Update = () => {
 
         }
         console.log(bookings)
-        fetch(`http://localhost:5000/bookings/${updateData._id}`, {
+        fetch(`https://dolls-server-assignment11.vercel.app/bookings/${updateData._id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

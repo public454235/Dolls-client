@@ -58,22 +58,22 @@ const router = createBrowserRouter([
       {
         path: '/update/:id',
         element: <Update></Update>,
-        loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
+        loader: ({ params }) => fetch(`https://dolls-server-assignment11.vercel.app/bookings/${params.id}`)
       },
       {
         path: 'babyDetails/:id',
         element: <BabyDetails></BabyDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/servicesdoll/${params.id}`)
+        loader: ({ params }) => fetch(`https://dolls-server-assignment11.vercel.app/servicesdoll/${params.id}`)
       },
       {
         path: 'barbieDolls/:id',
         element: <BarbieDetails></BarbieDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/servicesBarbie/${params.id}`)
+        loader: ({ params }) => fetch(`https://dolls-server-assignment11.vercel.app/servicesBarbie/${params.id}`)
       },
       {
         path: 'girldoll/:id',
         element: <GirlDetails></GirlDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/servicesGirl/${params.id}`)
+        loader: ({ params }) => fetch(`https://dolls-server-assignment11.vercel.app/servicesGirl/${params.id}`)
       },
       {
         path: 'addAToy',
@@ -88,7 +88,7 @@ const router = createBrowserRouter([
       {
         path: '/bookings/:id',
         element: <Details></Details>,
-        loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
+        loader: ({ params }) => fetch(`https://dolls-server-assignment11.vercel.app/bookings/${params.id}`)
       }
     ]
   },
