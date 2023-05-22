@@ -8,8 +8,8 @@ const AllToys = () => {
 
   const bookings = useLoaderData()
 
-  useTitle('All Toys')
 
+  useTitle('All Toys')
   const [allToys, setAllToys] = useState(bookings)
 
   const handleAddSearch = event => {
@@ -17,11 +17,12 @@ const AllToys = () => {
     const form = event.target;
     const name = form.name.value
     const search = bookings.filter(allToy => allToy.category == name)
+    console.log(search)
     setAllToys(search)
 
   }
 
- 
+
   return (
     <div>
 
