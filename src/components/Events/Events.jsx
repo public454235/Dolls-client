@@ -7,7 +7,7 @@ const Events = () => {
                 <div className="divider font-bold text-orange-700">Events</div>
                 <h2 className="text-4xl font-bold text-blue-950">Our Events</h2>
             </div>
-            <div className="bg-base-200 grid grid-cols-1 lg:grid-cols-2 gap-5">
+            <div className="bg-base-200 grid grid-cols-1 lg:grid-cols-2 gap-5" data-aos="fade-down-right">
                 <div className="hero min-h-6 " style={{ backgroundImage: `url("https://i.ibb.co/SXkrxkb/doll35.jpg")` }}>
                     <div className="hero-overlay bg-opacity-50"></div>
                     <div className="hero-content text-center text-neutral-content">
