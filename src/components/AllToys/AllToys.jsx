@@ -6,17 +6,17 @@ import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
 
-  const booking = useLoaderData()
+  const bookings = useLoaderData()
 
   useTitle('All Toys')
 
-  const [allToys, setAllToys] = useState(booking)
+  const [allToys, setAllToys] = useState(bookings)
 
   const handleAddSearch =event=>{
     event.preventDefault()
     const form = event.target;
     const name = form.search.value
-    const search = booking.filter(allToy=> allToy.category == name)
+    const search = bookings.filter(allTo=> allTo.category == name)
     allToys(search)
     
   }
@@ -32,6 +32,7 @@ const AllToys = () => {
   return (
     <div>
 
+      <div>
       <form onSubmit={handleAddSearch}>
         <div className="form-control">
           <div className="input-group">
@@ -41,6 +42,7 @@ const AllToys = () => {
           </div>
         </div>
       </form>
+      </div>
 
 
       <div className="overflow-x-auto w-full">
