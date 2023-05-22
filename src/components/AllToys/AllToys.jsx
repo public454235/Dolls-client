@@ -1,11 +1,25 @@
 import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import AllToysRow from "./AllToysRow";
 import useTitle from "../../hooks/useTitle";
 
+
 const AllToys = () => {
+
+  const booking = useLoaderData()
+
   useTitle('All Toys')
 
-  const [allToys, setAllToys] = useState([])
+  const [allToys, setAllToys] = useState(booking)
+
+  const handleAddSearch =event=>{
+    event.preventDefault()
+    const form = event.target;
+    const name = form.search.value
+    const search = booking.filter(allToy=> allToy.category == name)
+    allToys(search)
+    
+  }
 
   useEffect(() => {
     fetch('https://dolls-server-assignment11.vercel.app/bookings')
@@ -17,14 +31,24 @@ const AllToys = () => {
   }, [])
   return (
     <div>
-      
+
+      <form onSubmit={handleAddSearch}>
+        <div className="form-control">
+          <div className="input-group">
+            <input type="text" name="name" placeholder="Search…" className="input input-bordered" />
+            <button type="submit" className="btn btn-square"> search
+            </button>
+          </div>
+        </div>
+      </form>
+
 
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
-          
+
           <thead>
             <tr>
-              
+
               <th>image</th>
               <th>Seller</th>
               <th>Toy Name</th>
@@ -36,7 +60,7 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            
+
             {
               allToys.map(allToy => <AllToysRow
                 key={allToy._id}
