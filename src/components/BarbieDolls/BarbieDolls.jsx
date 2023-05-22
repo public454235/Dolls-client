@@ -14,9 +14,9 @@ const BarbieDolls = () => {
     return (
         <div>
             <div className=" mt-12 grid grid-cols-1 lg:grid-cols-2 ">
-                
+
                 {
-                    barbieCard.map(barbie=> <BarbieCard
+                    barbieCard.map(barbie => <BarbieCard
                         key={barbie._id}
                         barbie={barbie}
                     ></BarbieCard>)

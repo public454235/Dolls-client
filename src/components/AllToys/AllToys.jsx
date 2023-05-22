@@ -5,7 +5,6 @@ import useTitle from "../../hooks/useTitle";
 
 
 const AllToys = () => {
-
   const bookings = useLoaderData()
 
 
@@ -17,7 +16,7 @@ const AllToys = () => {
     const form = event.target;
     const name = form.name.value
     const search = bookings.filter(allToy => allToy.category == name)
-    console.log(search)
+   
     setAllToys(search)
 
   }

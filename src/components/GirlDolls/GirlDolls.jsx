@@ -8,7 +8,7 @@ const GirlDolls = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/servicesGirl')
+        fetch('https://dolls-server-assignment11.vercel.app/servicesGirl')
             .then(res => res.json())
             .then(data => setGirlDolls(data))
     }, [])
