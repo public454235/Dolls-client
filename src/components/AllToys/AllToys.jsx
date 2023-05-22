@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import AllToysRow from "./AllToysRow";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
+  useTitle('All Toys')
 
   const [allToys, setAllToys] = useState([])
 
@@ -19,15 +21,11 @@ const AllToys = () => {
 
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
-          {/* head */}
+          
           <thead>
             <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <th>img</th>
+              
+              <th>image</th>
               <th>Seller</th>
               <th>Toy Name</th>
               <th>Sub-category</th>
@@ -38,7 +36,7 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
+            
             {
               allToys.map(allToy => <AllToysRow
                 key={allToy._id}

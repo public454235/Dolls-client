@@ -1,16 +1,12 @@
 import { Link } from "react-router-dom";
 
 
-const ShowToy = ({ show }) => {
+const ShowToy = ({ show, handleDelete }) => {
     const { _id, name, seller_name, category, Price, Rating, quantity, photo } = show;
-    // const handleDelete = id => {
 
-    // }
     return (
         <tr>
-            <th>
-
-            </th>
+            
             <td>
                 <div className="avatar">
                     <div className="w-24 rounded-xl h-24">
@@ -27,10 +23,10 @@ const ShowToy = ({ show }) => {
             <td>{Rating}</td>
             <td>{quantity}</td>
             <td>
-                <button onClick={handleDelete} className="btn btn-secondary" >Delete</button>
+                <button onClick={() => handleDelete(_id)} className="btn btn-secondary" >Delete</button>
             </td>
             <td>
-                <Link to=''>
+                <Link to={`/update/${_id}`}>
                     <button className="btn btn-secondary" >Update</button></Link>
             </td>
 

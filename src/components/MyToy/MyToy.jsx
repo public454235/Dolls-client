@@ -1,9 +1,12 @@
 import { useEffect, useContext, useState } from "react";
+import Swal from 'sweetalert2'
 
 import { AuthContext } from "../Providers/AuthProviders";
 import ShowToy from "./ShowMyToy/ShowToy";
+import useTitle from "../../hooks/useTitle";
 
 const MyToy = () => {
+    useTitle('MyToy')
     const { user } = useContext(AuthContext)
     const [myBooking, setMyBooking] = useState([])
     const url = `http://localhost:5000/bookings?email=${user?.email}`
@@ -15,19 +18,36 @@ const MyToy = () => {
                 setMyBooking(data)
             })
     }, [])
+    const handleDelete = id => {
+        console.log(id)
+        fetch(`http://localhost:5000/bookings/${id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.deletedCount > 0) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                    const remaining = myBooking.filter(booking => booking._id !== id);
+                    setMyBooking(remaining)
+                }
+
+            })
+
+    }
     return (
 
         <div className="overflow-x-auto w-full">
             <table className="table w-full">
-                {/* head */}
+               
                 <thead>
                     <tr>
-                        <th>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                            </label>
-                        </th>
-                        <th>img</th>
+                       
+                        <th>image</th>
                         <th>Seller</th>
                         <th>Toy Name</th>
                         <th>Sub-category</th>
@@ -41,7 +61,13 @@ const MyToy = () => {
                 <tbody>
 
                     {
-                        myBooking.map(show => <ShowToy show={show} key={show._id}></ShowToy>)
+                        myBooking.map(show => <ShowToy
+                            key={show._id}
+                            show={show}
+                            handleDelete={handleDelete}
+
+
+                        ></ShowToy>)
                     }
 
                 </tbody>

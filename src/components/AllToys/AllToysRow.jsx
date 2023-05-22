@@ -7,9 +7,7 @@ const AllToysRow = ({ allToy }) => {
     const { _id, name, seller_name, category, Price, Rating, quantity, photo } = allToy;
     return (
         <tr>
-            <th>
-
-            </th>
+            
             <td>
                 <div className="avatar">
                     <div className="w-24 rounded-xl h-24">
