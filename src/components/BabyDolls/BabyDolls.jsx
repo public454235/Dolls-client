@@ -12,7 +12,7 @@ const BabyDolls = () => {
     }, [])
     return (
         <div>
-            <div className=" mt-12 grid grid-cols-1 lg:grid-cols-2 ">
+            <div className=" mt-12 grid grid-cols-1 lg:grid-cols-2">
                 
                 {
                     babyDolls.map(babyDoll=><BabyCard 

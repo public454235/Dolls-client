@@ -9,7 +9,7 @@ const Category = () => {
         <div>
 
             <Tabs>
-                <TabList>
+                <TabList className='text-center mt-12'>
                     <Tab>Baby Dolls</Tab>
                     <Tab>Barbie</Tab>
                     <Tab>Girl</Tab>

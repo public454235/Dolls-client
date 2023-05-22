@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import AllToysRow from "./AllToysRow";
 import useTitle from "../../hooks/useTitle";
@@ -12,36 +12,29 @@ const AllToys = () => {
 
   const [allToys, setAllToys] = useState(bookings)
 
-  const handleAddSearch =event=>{
+  const handleAddSearch = event => {
     event.preventDefault()
     const form = event.target;
-    const name = form.search.value
-    const search = bookings.filter(allTo=> allTo.category == name)
-    allToys(search)
-    
+    const name = form.name.value
+    const search = bookings.filter(allToy => allToy.category == name)
+    setAllToys(search)
+
   }
 
-  useEffect(() => {
-    fetch('https://dolls-server-assignment11.vercel.app/bookings')
-      .then(res => res.json())
-      .then(data => {
-        setAllToys(data)
-        console.log(data)
-      })
-  }, [])
+ 
   return (
     <div>
 
       <div>
-      <form onSubmit={handleAddSearch}>
-        <div className="form-control">
-          <div className="input-group">
-            <input type="text" name="name" placeholder="Search…" className="input input-bordered" />
-            <button type="submit" className="btn btn-square"> search
-            </button>
+        <form onSubmit={handleAddSearch} className="text-center">
+          <div className="form-control">
+            <div className="input-group">
+              <input type="text" name="name" placeholder="Search…" className="input input-bordered" />
+              <button type="submit" className="btn btn-square"> search
+              </button>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
       </div>
 
 

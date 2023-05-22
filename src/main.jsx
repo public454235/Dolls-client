@@ -82,7 +82,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'allToys',
-        element: <AllToys></AllToys>
+        element: <AllToys></AllToys>,
+        loader: ()=> fetch('https://dolls-server-assignment11.vercel.app/bookings')
 
       },
       {

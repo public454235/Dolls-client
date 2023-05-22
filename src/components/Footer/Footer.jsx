@@ -3,29 +3,29 @@
 const Footer = () => {
   return (
     <div className="mx-auto">
-      <footer className="footer p-10 bg-base-200 text-base-content">
+      <footer className="footer p-10  text-base-content bg-slate-950 mb-12 mt-2">
         <div className="mx-auto">
-          <span className="footer-title">Services</span>
+          <span className="footer-title text-yellow-500 font-bold text-2xl">Services</span>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
           <a className="link link-hover">Marketing</a>
           <a className="link link-hover">Advertisement</a>
         </div>
         <div className="mx-auto">
-          <span className="footer-title">Company</span>
+          <span className="text-yellow-500 font-bold text-2xl footer-title">Company</span>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>
           <a className="link link-hover">Press kit</a>
         </div>
         <div className="mx-auto">
-          <span className="footer-title">Legal</span>
+          <span className="footer-title text-yellow-500 font-bold text-2xl">Legal</span>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>
           <a className="link link-hover">Cookie policy</a>
         </div>
         <div className="mx-auto">
-          <span className="footer-title texto">Newsletter</span>
+          <span className="footer-title text-yellow-500 font-bold text-2xl">Newsletter</span>
           <div className="form-control w-80">
             <label className="label">
               <span className="label-text">Enter your email address</span>
